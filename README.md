@@ -374,7 +374,7 @@ make dev
 
 > [!TIP]
 > ### Troubleshooting Function Execution in Function App
-> In the function app script, ensure that you add the parameter `delete=True` to the `NamedTemporaryFile` line (line 96). This change allows the temporary file created to remain in memory for reading by PyMuPDF. If you do not include this parameter, you may encounter an error indicating that the file does not exist because the temporary file is immediately deleted after creation!
+> In the function app script, ensure that you add the parameter `delete=false` to the `NamedTemporaryFile` line (line 96). This change allows the temporary file created to remain in memory for reading by PyMuPDF. If you do not include this parameter, you may encounter an error indicating that the file does not exist because the temporary file is immediately deleted after creation!
 
 > [!TIP]
 > ### Enabling Storage Account Key Access
