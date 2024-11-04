@@ -292,10 +292,6 @@ document_intelligence:
   endpoint: https://xxx.cognitiveservices.azure.com
 ```
 > [!TIP]
-> ### Setting Up the Python Environment
-> Make sure you have Python 3.11 or an earlier (3.10, 3.9) version installed. Then, create a virtual environment, which will be required to run functions_app.py.
-
-> [!TIP]
 > ### Verify Model Availability
 > Ensure that the models specified in `config.yaml` is available in your Azure OpenAI account. Follow these steps to check and deploy models if necessary:
 > 1. Go to your **Azure OpenAI** service in the [Azure Portal](https://portal.azure.com).
@@ -329,21 +325,6 @@ document_intelligence:
 > - **AzureWebJobsStorage**: This can be found in the Access Keys section of your Storage Account.
 > - **APPLICATIONINSIGHTS_CONNECTION_STRING**: This can be retrieved from your Application Insights resource.
 
-> [!TIP]
-> ### Troubleshooting Function Execution in Function App
-> In the function app script, ensure that you add the parameter `delete=True` to the `NamedTemporaryFile` line (line 96). This change allows the temporary file created to remain in memory for reading by PyMuPDF. If you do not include this parameter, you may encounter an error indicating that the file does not exist because the temporary file is immediately deleted after creation!
-
-> [!TIP]
-> ### Enabling Storage Account Key Access
-> You may need to enable storage account key access to ensure proper functionality. To do this, follow these steps:
-> 1. Go to your **Storage Account** in the Azure Portal.
-> 2. Navigate to **Settings**.
-> 3. Click on **Configuration**.
-> 4. Ensure that **Allow storage account key access** is set to **Enabled**.
->> **Note:**
->> When **Allow storage account key access** is disabled, any requests to the account authorized with Shared Key, including shared access signatures (SAS), will be denied. This can lead to errors when connecting between services using keys.
-
-
 To use a Service Principal to authenticate to Azure, you can also add the following in a `.env` file:
 
 ```dotenv
@@ -359,6 +340,10 @@ LLM__FAST__AZURE_OPENAI__ENDPOINT=https://xxx.openai.azure.com
 ```
 
 Then run:
+
+> [!TIP]
+> ### Setting Up the Python Environment
+> Make sure you have Python 3.11 or an earlier (3.10, 3.9) version installed. Then, create a virtual environment, which will be required to run functions_app.py.
 
 ```bash
 # Install dependencies
@@ -386,6 +371,21 @@ Finally, run:
 # Start the local API server
 make dev
 ```
+
+> [!TIP]
+> ### Troubleshooting Function Execution in Function App
+> In the function app script, ensure that you add the parameter `delete=True` to the `NamedTemporaryFile` line (line 96). This change allows the temporary file created to remain in memory for reading by PyMuPDF. If you do not include this parameter, you may encounter an error indicating that the file does not exist because the temporary file is immediately deleted after creation!
+
+> [!TIP]
+> ### Enabling Storage Account Key Access
+> You may need to enable storage account key access to ensure proper functionality. To do this, follow these steps:
+> 1. Go to your **Storage Account** in the Azure Portal.
+> 2. Navigate to **Settings**.
+> 3. Click on **Configuration**.
+> 4. Ensure that **Allow storage account key access** is set to **Enabled**.
+>> **Note:**
+>> When **Allow storage account key access** is disabled, any requests to the account authorized with Shared Key, including shared access signatures (SAS), will be denied. This can lead to errors when connecting between services using keys.
+
 
 ## Advanced usage
 
