@@ -15,23 +15,22 @@ In the current MCP implementation (as of 02/08/2025):
 **MCP Shield objectives:**  
 - Introduce **authorization** for clients.  
 - Associate **roles and permissions** with each client.  
-- Ensure that clients can **only access what they are allowed to see**, improving security and control over MCP server resources.
+- Ensure that clients can **only access what they are allowed to see**, improving security and control over MCP server resources.  
+- Support **server-level filters** configured by admins before the server starts, blocking certain items for all clients.
 
 ### Architecture Diagram
 
 ```mermaid
-flowchart LR
-    Client[Client]
-    AuthService[Authorization Service]
-    MCPServer[MCP Server]
-    Tools[Tools]
-    Prompts[Prompts]
-    Resources[Resources]
-    Templates[Templates]
-
-    Client -->|Authentication & Requests| AuthService
-    AuthService -->|Access Control Checks| MCPServer
-    MCPServer --> Tools
-    MCPServer --> Prompts
-    MCPServer --> Resources
-    MCPServer --> Templates
+flowchart TD
+    Admin[Admin] -->|Set server filters| MCPServer[MCP Server]
+    Client[Client] -->|Request access token| AuthService[Authorization Service]
+    AuthService -->|Generate token with roles & permissions| Client
+    Client -->|Request item with token| MCPServer
+    MCPServer -->|Check token roles & permissions against item requirements| AccessControl[Access Control]
+    
+    AccessControl -->|Access granted| Tools[Tools]
+    AccessControl -->|Access granted| Prompts[Prompts]
+    AccessControl -->|Access granted| Resources[Resources]
+    AccessControl -->|Access granted| Templates[Templates]
+    
+    AccessControl -->|Access denied| Denied[Access Denied Message]
