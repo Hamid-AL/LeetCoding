@@ -38,15 +38,15 @@ For the example array, the prefix sum array is:
 
 To find the sum of elements between indices L and R (inclusive), we use:
 
-$$
+```math
 \sum_{i=L}^{R} \texttt{arr}[i] = \sum_{i=1}^{R} \texttt{arr}[i] - \sum_{i=1}^{L-1} \texttt{arr}[i]
-$$
+```
 
 Using the prefix sum array:
 
-$$
+```math
 \sum_{i=L}^{R} \texttt{arr}[i] = \texttt{prefix}[R] - \texttt{prefix}[L-1]
-$$
+```
 
 - Preprocessing the prefix sum array takes $O(N)$.
 - Each query takes $O(1)$.
