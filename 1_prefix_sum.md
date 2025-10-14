@@ -1,5 +1,7 @@
 # Prefix Sum Technique
 
+The **Prefix Sum Technique** is a powerful and widely used approach in coding interviews, especially for optimizing queries related to subarray sums and cumulative computations.
+
 Let's say we have a one-indexed integer array `arr` of size N and we want to compute the value of
 
 $$
@@ -71,3 +73,12 @@ $$
 | Index i    | 0 | 1 | 2 | 3 | 4 | 5 | 6 |
 |------------|---|---|---|---|---|---|---|
 | prefix[i]  | 0 | 1 | 7 | 11 | 13 | 18 | 21 |
+
+
+## LetCode challanges
+- Subarray Sum Equals K (#560)
+- Range Sum Query - Immutable (#303)
+- Continuous Subarray Sum (#523)
+- Maximum Size Subarray Sum Equals k (#325)
+- Subarray Sums Divisible by K (#974)
+
