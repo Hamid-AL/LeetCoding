@@ -19,14 +19,15 @@ Naively, for every query, we can iterate through all entries from index a to ind
 We can use **prefix sums** to process these queries efficiently. We define a prefix sum array `prefix` as follows:
 
 - Set `prefix[0] = 0` (because we're 1-indexing).
-- For each k such that $1 \le k \le N$:
-$$
+- For each k such that $1 \le k \le N$: 
+```math
 \texttt{prefix}[k] = \sum_{i=1}^{k} \texttt{arr}[i]
-$$
+```
 or equivalently:
-$$
+
+```math
 \texttt{prefix}[k] = \texttt{prefix}[k-1] + \texttt{arr}[k]
-$$
+```
 
 For the example array, the prefix sum array is:
 
