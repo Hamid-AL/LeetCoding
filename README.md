@@ -65,6 +65,30 @@ Now we can predict runtimes for larger inputs.
 
 ---
 
+## Big O Notion Operations
+
+### Addition
+Formula: 
+```math
+O(f(n)) + O(g(n)) = O(\max(f(n), g(n)))
+```
+
+### Multiplication
+Formula: 
+```math
+O(f(n)) \times O(g(n)) = O(f(n) \cdot g(n))
+```
+
+#### Examples
+
+| Type | Rule | Example |
+|------|------|---------|
+| Consecutive operations | Add → O(max(f(n), g(n))) | O(n) + O(n²) = O(n²) |
+| Nested loops | Multiply → O(f(n)·g(n)) | O(n) × O(n) = O(n²) |
+| Constants | Ignore | O(3n² + 5n) = O(n²) |
+| Independent inputs | Max | O(n) + O(m) = O(max(n, m)) |
+
+
 ## 📊 Growth Comparison
 
 Quadratic time grows **much faster** than linear or logarithmic time.  
