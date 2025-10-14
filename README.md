@@ -19,7 +19,7 @@ k is a constant.
 | O(n²) | Quadratic | Nested loops | T(n) = k · n² |
 | O(2ⁿ) | Exponential | Solving the traveling salesman problem | T(n) = k · 2ⁿ |
 
-
+image of time complexity here
 
 ---
 
