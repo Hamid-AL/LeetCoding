@@ -76,10 +76,10 @@ $$
 | prefix[i]  | 0 | 1 | 7 | 11 | 13 | 18 | 21 |
 
 
-## LetCode challanges
-- Subarray Sum Equals K (#560)
-- Range Sum Query - Immutable (#303)
-- Continuous Subarray Sum (#523)
+## LeetCode challanges
+- Subarray Sum Equals K (#560) ✅
+- Range Sum Query - Immutable (#303) ✅
+- Continuous Subarray Sum (#523) ✅
 - Maximum Size Subarray Sum Equals k (#325)
 - Subarray Sums Divisible by K (#974)
 
