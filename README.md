@@ -15,6 +15,7 @@ Before diving into the patterns, take a look at the fundamentals of **Big O nota
 
 1. **Prefix Sum** — [1_prefix_sum.md](./1_prefix_sum.md)  
 2. **Sliding Window** — [2_sliding_window.md](./2_sliding_window.md)
+3. **Two Pointers** — [3_two_pointers.md](./3_two_pointers.md)
 
 ---
 
